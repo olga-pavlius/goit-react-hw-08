@@ -1,0 +1,39 @@
+.item {
+    border: solid 1px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    max-width: 260px;
+}
+
+.button {
+    border: solid 1px;
+    border-color: rgb(94, 92, 92);
+    border-radius: 5px;
+    width: 120px;
+    padding: 0;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.btn {
+    align-self: center;
+    border: 1px solid #213547;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+}
+
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: #5c90bd;
+}
+
+.text {
+    display: flex;
+}
