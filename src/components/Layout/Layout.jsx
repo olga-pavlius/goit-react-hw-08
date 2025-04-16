@@ -1,11 +1,25 @@
-import AppBar from "../AppBar/AppBar";
-import css from "./Layout.module.css";
+// import AppBar from "../AppBar/AppBar";
+// import css from "./Layout.module.css";
 
-export default function Layout({ children }) {
+// export default function Layout({ children }) {
+//   return (
+//     <div className={css.container}>
+//       <AppBar />
+//       {children}
+//     </div>
+//   );
+// }
+
+import React from "react";
+import AppBar from "../AppBar/AppBar";
+
+const Layout = ({ children }) => {
   return (
-    <div className={css.container}>
+    <div>
       <AppBar />
-      {children}
+      <main>{children}</main>
     </div>
   );
-}
+};
+
+export default Layout;

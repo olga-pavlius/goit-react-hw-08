@@ -1,11 +1,25 @@
-import PageTitle from "../../components/PageTitle/PageTitle";
+// import PageTitle from "../../components/PageTitle/PageTitle";
+// import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+
+// export default function RegisterPage() {
+//   return (
+//     <div>
+//       <PageTitle>Register your account</PageTitle>
+//       <RegistrationForm />
+//     </div>
+//   );
+// }
+
+import React from "react";
 import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
-export default function RegisterPage() {
+const RegistrationPage = () => {
   return (
     <div>
-      <PageTitle>Register your account</PageTitle>
+      <h1>Registration</h1>
       <RegistrationForm />
     </div>
   );
-}
+};
+
+export default RegistrationPage;
