@@ -1,1 +1,15 @@
-export const selectNameFilter = (state) => state.filters.name;
+// export const selectNameFilter = (state) => state.filters.name;
+
+import { createSelector } from "@reduxjs/toolkit";
+import { selectContact } from "../contacts/selectors";
+
+export const selectFilter = (state) => state.filters.name;
+
+export const selectVisibleContacts = createSelector(
+  [selectContact, selectFilter],
+  (contacts, filterName) => {
+    return contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(filterName.toLowerCase())
+    );
+  }
+);
