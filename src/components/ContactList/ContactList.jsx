@@ -87,7 +87,7 @@ export default function ContactList() {
   return (
     <ul className={css.list}>
       {visibleContacts.map((contact) => (
-        <li key={contact.id} className={css.iteam}>
+        <li key={contact.id} className={css.item}>
           <Contact
             contact={{ ...contact, number: formatPhoneNumber(contact.number) }}
             onDelete={handleDelete}
