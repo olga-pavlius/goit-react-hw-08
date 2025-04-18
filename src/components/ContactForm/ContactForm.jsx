@@ -194,3 +194,82 @@
 //     </Formik>
 //   );
 // }
+
+// import { useDispatch } from "react-redux";
+// import { useState } from "react";
+// import { addContact } from "../../redux/contacts/operations";
+
+// const ContactForm = () => {
+//   const dispatch = useDispatch();
+
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     number: "",
+//   });
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     dispatch(addContact(formData));
+//     setFormData({ name: "", number: "" });
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label>
+//         Name:
+//         <input
+//           type="text"
+//           name="name"
+//           value={formData.name}
+//           onChange={handleChange}
+//           required
+//         />
+//       </label>
+//       <label>
+//         Number:
+//         <input
+//           type="tel"
+//           name="number"
+//           value={formData.number}
+//           onChange={handleChange}
+//           required
+//         />
+//       </label>
+//       <button type="submit">Add Contact</button>
+//     </form>
+//   );
+// };
+
+// export default ContactForm;
+
+
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import ContactForm from "../../components/ContactForm/ContactForm";
+import ContactList from "../../components/ContactList/ContactList";
+import Filter from "../../components/Filter/Filter";
+import { fetchContacts } from "../../redux/contacts/operations";
+
+const ContactsPage = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  return (
+    <div>
+      <h1>Your Contacts</h1>
+      <ContactForm />
+      <Filter />
+      <ContactList />
+    </div>
+  );
+};
+
+export default ContactsPage;
