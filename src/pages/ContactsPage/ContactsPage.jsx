@@ -8,6 +8,7 @@ import {
 } from "../../redux/contacts/selectors";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
+import SearchBox from "../../components/SearchBox/SearchBox";
 
 export default function ContactPage() {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export default function ContactPage() {
     <>
       <h1>ContactPage</h1>
       <ContactEditor />
+      <SearchBox />
       {isLoading && <p>Loading...</p>}
       {isError && <h1>Not Found</h1>}
       {contacts.length > 0 ? <ContactList /> : <h1>Немає контактів</h1>}
